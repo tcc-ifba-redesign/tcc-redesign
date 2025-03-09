@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Tela visualizar edital no Sistema de Processos Seletivos da UESB">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização do Edital | Processos Seletivos UESB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+    <style>
+        .high-contrast {
+            background-color: black !important;
+            color: yellow !important;
+        }
+
+        .high-contrast .card,
+        .high-contrast .form-control {
+            background-color: black !important;
+            color: yellow !important;
+            border: 2px solid yellow !important;
+        }
+
+        .high-contrast a {
+            color: yellow !important;
+        }
+
+        .text-large {
+            font-size: 1.25rem !important;
+        }
+
+        .text-small {
+            font-size: 0.85rem !important;
+        }
+
+        #pdf-container {
+            font-family: 'Times New Roman';
+            height: 40vh;
+            width: 100%;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+    </style>
+</head>
+
+<body class="bg-light" role="document">
+    <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <h1 class="m-0">Sistema de Processos Seletivos</h1>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-home" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-minhas-inscricoes" href="minhas_inscricoes.html"
+                        aria-label="Ir para minhas inscrições">Minhas Inscrições</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-dados-pessoais" href="dados_pessoais.html"
+                        aria-label="Ir para meus dados">Meus
+                        Dados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-contato" href="contato.html"
+                        aria-label="Ir para a contato">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-ajuda" href="ajuda.html"
+                        aria-label="Ir para a ajuda">Ajuda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-danger" id="bt-sair" href="../" aria-label="Sair do sistema">Sair</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-dark me-2" id="toggleContrast" aria-label="Ativar/desativar alto contraste">
+                <i class="fa-solid fa-adjust"></i> Alto Contraste
+            </button>
+            <button class="btn btn-dark me-2" id="increaseText" aria-label="Aumentar tamanho do texto">
+                <i class="fa-solid fa-plus"></i> Aumentar Texto
+            </button>
+            <button class="btn btn-dark" id="decreaseText" aria-label="Diminuir tamanho do texto">
+                <i class="fa-solid fa-minus"></i> Diminuir Texto
+            </button>
+        </div>
+
+        <main role="main" aria-labelledby="main-title">
+            <h2 id="main-title" class="text-center mt-4">Visualização do Edital</h2>
+            <p class="text-center">Leia atentamente o edital antes de prosseguir.</p>
+
+            <div class="card p-4 mt-4 text-center">
+                <h3>EDITAL Nº 001/2024</h3>
+                <div id="pdf-container">
+                    <div>
+                        <h1>UNIVERSIDADE ESTADUAL DO SUDOESTE DA BAHIA – UESB</h1>
+                        <h1>Recredenciada pelo Decreto Estadual N° 16.825, de 04.07.2016</h1>
+                        <h1>EDITAL Nº 289/2024</h1>
+                        <h2>PROCESSO SELETIVO PARA INGRESSO DE ALUNOS PORTADORES DE DIPLOMA DE CURSO SUPERIOR PARA OS
+                            CURSOS DE GRADUAÇÃO DA UESB</h2>
+                        <p>O Reitor em Exercício da Universidade Estadual do Sudoeste da Bahia (UESB), no uso de suas
+                            atribuições legais, conferidas na forma estabelecida na Lei Estadual nº. 13.466, de
+                            22/12/2015, e nas normas estatutárias e regimentais, torna público a todos que o presente
+                            Edital virem ou dele conhecimento tenham, que ficam abertas as inscrições do Processo
+                            Seletivo de Portador de Diploma de Curso Superior para os Cursos de Graduação da Uesb, no
+                            período de 08 a 22 de outubro de 2024, com observância às disposições das Resoluções nºs.
+                            55/2019 e 60/2009 do Conselho Superior de Ensino, Pesquisa e Extensão (Consepe) e de acordo
+                            com as seguintes normas:</p>
+
+                        <h2>1. DO PROCESSO SELETIVO</h2>
+                        <p>1.1. O Processo Seletivo destina-se ao ingresso de Alunos Portadores de Diploma de Curso
+                            Superior nos cursos de graduação da Uesb, cujas vagas são remanescentes do ingresso de
+                            alunos regulares no 2º Período Letivo de 2024 e serão preenchidas dentro do limite de vagas
+                            fixadas neste Edital. A classificação além desse limite de vagas não gera para o candidato
+                            direito à matrícula.</p>
+                        <p>1.2. O Processo Seletivo para ingresso de Alunos Portadores de Diploma de Curso Superior,
+                            deverá se guiar pelo seguinte cronograma:</p>
+
+                        <h3>CRONOGRAMA</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ATIVIDADES</th>
+                                    <th>PERÍODO / DATAS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Período de Inscrições</td>
+                                    <td>08 a 22/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Prazo de solicitação de isenção de pagamento da taxa de inscrição</td>
+                                    <td>08 a 10/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Publicação do resultado da análise dos pedidos de isenção de pagamento da taxa
+                                        de inscrição</td>
+                                    <td>15/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Interposição de Recurso contra o resultado da análise dos pedidos de isenção de
+                                        pagamento da taxa de inscrição</td>
+                                    <td>16/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Publicação da decisão da análise dos Recursos contra o resultado da isenção de
+                                        pagamento da taxa de inscrição</td>
+                                    <td>19/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Data limite para envio dos documentos exigidos para inscrição</td>
+                                    <td>23/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Data limite para pagamento da taxa de inscrição</td>
+                                    <td>23/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Data limite para requerimento de uso de nome social e de atendimento
+                                        especializado</td>
+                                    <td>23/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Publicação do resultado da homologação das inscrições</td>
+                                    <td>29/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Prazo de recurso contra resultado das homologações das inscrições</td>
+                                    <td>30 e 31/10/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Publicação da análise dos Recursos contra resultado da homologação das
+                                        inscrições</td>
+                                    <td>06/11/2024</td>
+                                </tr>
+                                <tr>
+                                    <td>Data para divulgação dos Pontos (temas) para realização das Provas</td>
+                                    <td>A partir 31/10/2024</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                    <button class="btn btn-secondary" id="prev-page">Página Anterior</button>
+                    <span>Página <span id="page-num">1</span> de <span id="page-count">25</span></span>
+                    <button class="btn btn-secondary" id="next-page">Próxima Página</button>
+                </div>
+            </div>
+
+            <div class="form-check mt-3 ">
+                <input class="form-check-input" type="checkbox" id="aceiteEdital">
+                <label class="form-check-label" for="aceiteEdital">
+                    Declaro ter lido o edital e que todas as informações fornecidas são verídicas. Estou ciente de que a
+                    Uesb tem o direito de excluir do Processo aquele que não preencher o formulário de forma completa,
+                    correta e/ou fornecer dados inverídicos ou falsos, ou anexar documentos ilegíveis ou incompletos.
+                </label>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+                <button class="btn btn-secondary" id="bt-cancelar">Cancelar</button>
+                <button class="btn btn-primary" id="bt-inscricao1">Inscrever-se</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("bt-inscricao1").addEventListener("click", function () {
+                window.location.href = "inscricao.html";
+            });
+            document.getElementById("bt-cancelar").addEventListener("click", function () {
+                window.location.href = "home.html";
+            });
+        });
+    </script>
+
+    <script src="../script/acessibilidade.js"></script>
+
+    <!-- VLibras : https://vlibras.gov.br/doc/widget/installation/webpageintegration.html -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+
+</html>

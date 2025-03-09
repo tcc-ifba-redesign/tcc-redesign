@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Tela de dados pessoais no Sistema de Processos Seletivos da UESB">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Pessoais | Processos Seletivos UESB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .high-contrast {
+            background-color: black !important;
+            color: yellow !important;
+        }
+
+        .high-contrast .card,
+        .high-contrast .form-control,
+        .high-contrast .form-select {
+            background-color: black !important;
+            color: yellow !important;
+            border: 2px solid yellow !important;
+        }
+
+        .high-contrast input::placeholder,
+        .custom-placeholder {
+            color: white !important;
+        }
+
+        .high-contrast a {
+            color: yellow !important;
+        }
+
+        .text-large {
+            font-size: 1.25rem !important;
+        }
+
+        .text-small {
+            font-size: 0.85rem !important;
+        }
+    </style>
+</head>
+
+<body class="bg-light" role="document">
+    <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <h1 class="m-0">Sistema de Processos Seletivos</h1>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-home" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-minhas-inscricoes" href="minhas_inscricoes.html"
+                        aria-label="Ir para minhas inscrições">Minhas Inscrições</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-dados-pessoais" href="dados_pessoais.html"
+                        aria-label="Ir para meus dados">Meus
+                        Dados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-contato" href="contato.html"
+                        aria-label="Ir para a contato">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-ajuda" href="ajuda.html"
+                        aria-label="Ir para a ajuda">Ajuda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-danger" id="bt-sair" href="../" aria-label="Sair do sistema">Sair</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-dark me-2" id="toggleContrast" aria-label="Ativar/desativar alto contraste">
+                <i class="fa-solid fa-adjust"></i> Alto Contraste
+            </button>
+            <button class="btn btn-dark me-2" id="increaseText" aria-label="Aumentar tamanho do texto">
+                <i class="fa-solid fa-plus"></i> Aumentar Texto
+            </button>
+            <button class="btn btn-dark" id="decreaseText" aria-label="Diminuir tamanho do texto">
+                <i class="fa-solid fa-minus"></i> Diminuir Texto
+            </button>
+        </div>
+
+        <main role="main" aria-labelledby="main-title">
+            <h2 id="main-title" class="text-center mt-4">Meus Dados</h2>
+            <p class="text-center">Atualize seus dados pessoais abaixo.</p>
+
+            <div class="card p-4 mt-4">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cpf" class="form-label">CPF</label>
+                            <input type="text" class="form-control" id="cpf" value="000.000.000-00" readonly>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nome" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nome_social" class="form-label">Nome Social</label>
+                            <input type="text" class="form-control" id="nome_social"
+                                placeholder="Nome social (opcional)">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="dt_nascimento" class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" id="dt_nascimento">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select class="form-select" id="sexo" placeholder="Selecione...">
+                                <option class="custom-placeholder" value="">Selecione...</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
+                                <option value="O">Outro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="telefone" class="form-label">Telefone / WhatsApp</label>
+                            <input type="text" class="form-control" id="telefone" placeholder="(00) 00000-0000">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="cep" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="cep" name="cep">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="uf" class="form-label">UF</label>
+                            <select class="form-select" id="uf" name="uf">
+                                <option value="BA">BA</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cidade" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="cidade" name="cidade">
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="bairro" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="bairro" name="bairro">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label for="logradouro" class="form-label">Logradouro</label>
+                            <input type="text" class="form-control" id="logradouro" name="logradouro">
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="numero" class="form-label">Número</label>
+                            <input type="text" class="form-control" id="numero" name="numero">
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <label for="complemento" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="complemento" name="complemento">
+                        </div>
+                    </div>
+
+
+                    <div class="d-flex justify-content-between pt-4">
+                        <button type="reset" class="btn btn-secondary">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Atualizar</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="../script/acessibilidade.js"></script>
+
+    <!-- VLibras : https://vlibras.gov.br/doc/widget/installation/webpageintegration.html -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+
+</html>

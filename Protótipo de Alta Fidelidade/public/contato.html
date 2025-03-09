@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">    
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Tela de contato do Sistema de Processos Seletivos da UESB">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Processos Seletivos UESB</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .high-contrast {
+            background-color: black !important;
+            color: yellow !important;
+        }
+
+        .high-contrast .card,
+        .high-contrast .form-control {
+            background-color: black !important;
+            color: yellow !important;
+            border: 2px solid yellow !important;
+        }
+
+        .high-contrast a {
+            color: yellow !important;
+        }
+
+        .text-large {
+            font-size: 1.25rem !important;
+        }
+
+        .text-small {
+            font-size: 0.85rem !important;
+        }
+    </style>
+</head>
+
+<body class="bg-light" role="document">
+
+    <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <h1 class="m-0">Sistema de Processos Seletivos</h1>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-contato" href="../" aria-label="Ir para o login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-contato" href="contato.html" aria-label="Ir para a contato">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-ajuda" href="ajuda.html" aria-label="Ir para a ajuda">Ajuda</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-dark me-2" id="toggleContrast" aria-label="Ativar/desativar alto contraste">
+                <i class="fa-solid fa-adjust"></i> Alto Contraste
+            </button>
+            <button class="btn btn-dark me-2" id="increaseText" aria-label="Aumentar tamanho do texto">
+                <i class="fa-solid fa-plus"></i> Aumentar Texto
+            </button>
+            <button class="btn btn-dark" id="decreaseText" aria-label="Diminuir tamanho do texto">
+                <i class="fa-solid fa-minus"></i> Diminuir Texto
+            </button>
+        </div>
+
+        <main role="main" aria-labelledby="main-title">
+            <h2 id="main-title" class="text-center mt-4">Contato</h2>
+            <p class="text-center">Entre em contato conosco enviando e-mail com sua dúvidas ou sugestões.</p>
+
+            <div class="card p-4 mt-4">
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </main>
+        <footer id="rodape" class=" p-4">
+            <div class="  text-center">
+                <p class="m-0  footer" aria-label="">UNIVERSIDADE ESTADUAL DO SUDOESTE DA BAHIA</p>
+                <p class="m-0  footer">CNPJ: 13.069.489/0001-08</p>
+                <p class="m-0  footer">Contato: (77) 3424-8721 - E-mail: pse@uesb.edu.br
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            document.getElementById("contactForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                alert("Mensagem enviada com sucesso!");
+                this.reset();
+            });
+        </script>
+
+        <script src="../script/acessibilidade.js"></script>
+
+        <!-- Bootstrap 5 -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+
+        <!-- VLibras : https://vlibras.gov.br/doc/widget/installation/webpageintegration.html -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+</body>
+
+</html>

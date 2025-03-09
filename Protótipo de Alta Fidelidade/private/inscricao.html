@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Tela de inscrição no Sistema de Processos Seletivos da UESB">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Inscrição | Processos Seletivos UESB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .high-contrast {
+            background-color: black !important;
+            color: yellow !important;
+        }
+
+        .high-contrast .card,
+        .high-contrast .form-control,
+        .high-contrast .form-select {
+            background-color: black !important;
+            color: yellow !important;
+            border: 2px solid yellow !important;
+        }
+
+        .high-contrast input::placeholder,
+        .custom-placeholder {
+            color: white !important;
+        }
+
+        .high-contrast a {
+            color: yellow !important;
+        }
+
+        .text-large {
+            font-size: 1.25rem !important;
+        }
+
+        .text-small {
+            font-size: 0.85rem !important;
+        }
+    </style>
+</head>
+
+<body class="bg-light" role="document">
+    <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <h1 class="m-0">Sistema de Processos Seletivos</h1>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-home" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-minhas-inscricoes" href="minhas_inscricoes.html"
+                        aria-label="Ir para minhas inscrições">Minhas Inscrições</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-dados-pessoais" href="dados_pessoais.html"
+                        aria-label="Ir para meus dados">Meus
+                        Dados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-contato" href="contato.html"
+                        aria-label="Ir para a contato">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-ajuda" href="ajuda.html"
+                        aria-label="Ir para a ajuda">Ajuda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-danger" id="bt-sair" href="../" aria-label="Sair do sistema">Sair</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-dark me-2" id="toggleContrast" aria-label="Ativar/desativar alto contraste">
+                <i class="fa-solid fa-adjust"></i> Alto Contraste
+            </button>
+            <button class="btn btn-dark me-2" id="increaseText" aria-label="Aumentar tamanho do texto">
+                <i class="fa-solid fa-plus"></i> Aumentar Texto
+            </button>
+            <button class="btn btn-dark" id="decreaseText" aria-label="Diminuir tamanho do texto">
+                <i class="fa-solid fa-minus"></i> Diminuir Texto
+            </button>
+        </div>
+
+
+        <main role="main" aria-labelledby="main-title">
+
+
+            <h2 id="main-title" class="text-center">Formulário de Inscrição</h2>
+            <p class="text-center">Preencha os dados abaixo para se inscrever.</p>
+            <div class="card p-4 mt-4">
+
+                <form class="">
+                    <fieldset class="pb-4">
+                        <legend>Curso Pretendido</legend>
+                        <div class="row g-3">
+                            <div class="col-md-5">
+                                <label for="curso" class="form-label">Curso Pretendido</label>
+                                <select class="form-select" id="curso" name="curso">
+                                    <option value="medicina">Medicina</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="campus" class="form-label">Campus</label>
+                                <select class="form-select" id="campus" name="campus">
+                                    <option value="VCA">Vitória da Conquista</option>
+                                    <option value="JQE">Jequié</option>
+                                    <option value="ITA">Itapetinga</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="vagas" class="form-label">Quantidade de Vagas</label>
+                                <input type="text" class="form-control" id="vagas" name="vagas" value="15" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="periodo" class="form-label">Período Letivo</label>
+                                <input type="text" class="form-control" id="periodo" name="periodo" value="2025.2"
+                                    readonly>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="form-label">Selecione a forma de concorrência:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tipo_concorrencia"
+                                        id="ampla_concorrencia" value="ampla_concorrencia">
+                                    <label class="form-check-label" for="ampla_concorrencia">Ampla concorrência</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="tipo_concorrencia"
+                                        id="reserva_vagas" value="reserva_vagas">
+                                    <label class="form-check-label" for="reserva_vagas">Reserva de vagas (exclusivo para
+                                        servidor
+                                        efetivo da UESB)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Documentos Anexos</legend>
+                        <div class="row g-3">
+                            <div class="col-md-12">                                
+                                <input type="file" class="form-control" id="anexos" name="anexos"
+                                    accept=".pdf, .jpg, .jpeg, .png" multiple>
+                                <small id="senhaHelp" role="alertdialog" class="text-danger"
+                                    aria-label="Faça o upload dos documentos exigidos pelo Edital no formato PDF ou imagem (JPG, PNG)">
+                                    Faça o upload dos documentos exigidos pelo Edital no formato PDF ou imagem (JPG,
+                                    PNG).</small>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="anexos" class="form-label">Anexos</label>
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                      <a href="#" target="_blank" rel="noopener noreferrer">documento teste.pdf</a>
+                                      <button class="btn btn-outline-danger" type="button">
+                                        <i class="fa-solid fa-trash-can "></i>
+                                      </button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <a href="#" target="_blank" rel="noopener noreferrer">imagem2345.png</a>
+                                      <button class="btn btn-outline-danger" type="button">
+                                        <i class="fa-solid fa-trash-can "></i>
+                                      </button>
+                                    </li>                                   
+                                  </ul>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <div class="d-flex justify-content-end pt-4">
+                        <button type="button" id="bt-cancelar" class="btn btn-danger me-3">Cancelar</button>
+                        <button type="button" id="bt-proximo" class="btn btn-primary">Próximo</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("bt-proximo").addEventListener("click", function () {
+                window.location.href = "confirmacao_inscricao.html";
+            });
+            document.getElementById("bt-cancelar").addEventListener("click", function () {
+                window.location.href = "home.html";
+            });
+        });
+    </script>
+
+    <script src="../script/acessibilidade.js"></script>
+
+    <!-- VLibras : https://vlibras.gov.br/doc/widget/installation/webpageintegration.html -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>

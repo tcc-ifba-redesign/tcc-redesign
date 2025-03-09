@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Tela minhas insccrições do Sistema de Processos Seletivos da UESB">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Inscrições | Processos Seletivos UESB</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .high-contrast {
+            background-color: black !important;
+            color: yellow !important;
+        }
+
+        .high-contrast .card,
+        .high-contrast .form-control {
+            background-color: black !important;
+            color: yellow !important;
+            border: 2px solid yellow !important;
+        }
+
+        .high-contrast a {
+            color: yellow !important;
+        }
+
+        .text-large {
+            font-size: 1.25rem !important;
+        }
+
+        .text-small {
+            font-size: 0.85rem !important;
+        }
+    </style>
+</head>
+
+<body class="bg-light" role="document">
+
+    <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center">
+        <h1 class="m-0">Sistema de Processos Seletivos</h1>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-home" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-minhas-inscricoes" href="minhas_inscricoes.html"
+                        aria-label="Ir para minhas inscrições">Minhas Inscrições</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-dados-pessoais" href="dados_pessoais.html"
+                        aria-label="Ir para meus dados">Meus
+                        Dados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-contato" href="contato.html"
+                        aria-label="Ir para a contato">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="bt-ajuda" href="ajuda.html"
+                        aria-label="Ir para a ajuda">Ajuda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-danger" id="bt-sair" href="../" aria-label="Sair do sistema">Sair</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-dark me-2" id="toggleContrast" aria-label="Ativar/desativar alto contraste">
+                <i class="fa-solid fa-adjust"></i> Alto Contraste
+            </button>
+            <button class="btn btn-dark me-2" id="increaseText" aria-label="Aumentar tamanho do texto">
+                <i class="fa-solid fa-plus"></i> Aumentar Texto
+            </button>
+            <button class="btn btn-dark" id="decreaseText" aria-label="Diminuir tamanho do texto">
+                <i class="fa-solid fa-minus"></i> Diminuir Texto
+            </button>
+        </div>
+
+        <main role="main" aria-labelledby="main-title">
+            <h2 id="main-title" class="text-center mt-4">Minhas Inscrições</h2>
+            <p class="text-center">Acompanhe o andamento, edite ou solicite recurso das suas inscrição.</p>
+
+            <div class="card p-4 mt-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Número de Inscrição</th>
+                                <th>Data da Inscrição</th>
+                                <th>Status da Inscrição</th>
+                                <th>Status do Pagamento</th>
+                                <th>Número do Edital</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inscricoesBody">
+                            <!-- Linhas preenchidas dinamicamente -->
+                        </tbody>
+                    </table>
+                    <nav aria-label="...">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#">Anterior</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active" aria-current="page">
+                                <span class="page-link">2</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Próximo</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </main>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const inscricoes = [
+                    {
+                        id: "202400005",
+                        data: "08/02/2025 02:22:04",
+                        status: "INSCRITO",
+                        pagamento: "EM ABERTO",
+                        edital: "001/2024/2024"
+                    },
+                    {
+                        id: "202400005",
+                        data: "08/02/2025 02:22:04",
+                        status: "INSCRITO",
+                        pagamento: "EM ABERTO",
+                        edital: "001/2024/2024"
+                    },
+                    {
+                        id: "202400005",
+                        data: "08/02/2025 02:22:04",
+                        status: "INSCRITO",
+                        pagamento: "EM ABERTO",
+                        edital: "001/2024/2024"
+                    },
+                    {
+                        id: "202400005",
+                        data: "08/02/2025 02:22:04",
+                        status: "INSCRITO",
+                        pagamento: "EM ABERTO",
+                        edital: "001/2024/2024"
+                    }
+
+                ];
+
+                const tbody = document.getElementById("inscricoesBody");
+                inscricoes.forEach(inscricao => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                    <td>${inscricao.id}</td>
+                    <td>${inscricao.data}</td>
+                    <td><span class="badge bg-success">${inscricao.status}</span></td>
+                    <td><span class="badge bg-warning text-dark">${inscricao.pagamento}</span></td>
+                    <td>
+                        <button class="btn btn-sm">
+                            <span class="material-icons">info</span>
+                        </button> ${inscricao.edital}
+                    </td>
+                    <td>
+                        <button class="btn  btn-sm me-2" title="Editar inscrição">
+                            <span class="material-icons">edit</span>
+                        </button>
+                        <button class="btn  btn-sm me-2" title="Reenviar comprovante">
+                            <span class="material-icons">mail</span>
+                        </button>
+                        <button class="btn   btn-sm" title="Solicitar recurso">
+                            <span class="material-icons">edit_note</span>
+                        </button>
+                    </td>
+                `;
+                    tbody.appendChild(row);
+                });
+            });
+        </script>
+
+        <script src="../script/acessibilidade.js"></script>
+
+        <!-- Bootstrap 5 -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+
+        <!-- VLibras : https://vlibras.gov.br/doc/widget/installation/webpageintegration.html -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+</body>
+
+</html>
