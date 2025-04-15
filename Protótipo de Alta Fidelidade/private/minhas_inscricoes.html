@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="robots" content="index, follow">
     <meta name="description" content="Tela minhas insccrições do Sistema de Processos Seletivos da UESB">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Inscrições | Processos Seletivos UESB</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -132,14 +132,14 @@
                         id: "202400005",
                         data: "08/02/2025 02:22:04",
                         status: "INSCRITO",
-                        pagamento: "EM ABERTO",
+                        pagamento: "PAGO",
                         edital: "001/2024/2024"
                     },
                     {
                         id: "202400005",
                         data: "08/02/2025 02:22:04",
-                        status: "INSCRITO",
-                        pagamento: "EM ABERTO",
+                        status: "CANCELADA",
+                        pagamento: "CANCELADA",
                         edital: "001/2024/2024"
                     },
                     {
@@ -162,11 +162,22 @@
                 const tbody = document.getElementById("inscricoesBody");
                 inscricoes.forEach(inscricao => {
                     const row = document.createElement("tr");
+                    let status = 'success';
+                    if (inscricao.status == "CANCELADA") {
+                        status = 'danger'
+                    }
+                    let pagamento = 'warning';
+                    if (inscricao.pagamento == "PAGO") {
+                        pagamento = 'success';
+                    }
+                    if (inscricao.pagamento == "CANCELADA") {
+                        pagamento = 'danger';
+                    }
                     row.innerHTML = `
                     <td>${inscricao.id}</td>
                     <td>${inscricao.data}</td>
-                    <td><span class="badge bg-success">${inscricao.status}</span></td>
-                    <td><span class="badge bg-warning text-dark">${inscricao.pagamento}</span></td>
+                    <td><span class="badge bg-${status}">${inscricao.status}</span></td>
+                    <td><span class="badge bg-${pagamento}">${inscricao.pagamento}</span></td>
                     <td>
                         <button class="btn btn-sm">
                             <span class="material-icons">info</span>
