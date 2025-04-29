@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="robots" content="index, follow">
     <meta name="description" content="Tela de confirmação de inscrição do Sistema de Processos Seletivos da UESB">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmação de Insccrição | Processos Seletivos UESB</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -88,56 +88,54 @@
             <p class="text-center">Confira os dados abaixo antes de confirmar sua inscrição.</p>
 
             <div class="card p-4 mt-4">
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
+                <div id="comprovante-container">
+                    <table class="table table-bordered table-striped align-middle">
+                        <tbody>
+                          <tr class="table-primary">
                             <th>Número de Inscrição</th>
-                            <td>202400005</td>
+                            <td colspan="2">202400005</td>
                             <th>Data da Inscrição</th>
-                            <td>08/02/2025 02:22:04</td>
+                            <td colspan="2">08/02/2025 02:22:04</td>
+                          </tr>
+                          <tr>
                             <th>Número do Edital</th>
-                            <td>001/2024/2024</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                        <tr>
+                            <td colspan="5">001/2024/2024</td>
+                          </tr>
+                          <tr class="table-light">
                             <th>CPF</th>
                             <td>123.456.789-00</td>
                             <th>Nome Completo</th>
                             <td>Nome do Candidato</td>
                             <th>E-mail</th>
                             <td>email@example.com</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                        <tr>
+                          </tr>
+                          <tr>
                             <th>Curso Pretendido</th>
                             <td>Medicina</td>
                             <th>Forma de Concorrência</th>
                             <td>Ampla Concorrência</td>
                             <th>Valor</th>
                             <td>R$ 100,00</td>
-                        </tr>
-
-                        <tr>
+                          </tr>
+                          <tr class="table-light">
                             <th>Status da Inscrição</th>
-                            <td>INSCRITO</td>
-                        </tr>
-                        <tr>
+                            <td colspan="2"><span class="badge bg-success">INSCRITO</span></td>
                             <th>Status do Pagamento</th>
-                            <td>EM ABERTO</td>
-                        </tr>
-                    </tbody>
-                </table>
+                            <td colspan="2"><span class="badge bg-warning text-dark">EM ABERTO</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                </div>
+
 
                 <div class="alert alert-info" role="alert">
                     Após finalizar, o boleto será enviado ao e-mail cadastrado.
                 </div>
 
-                <div class="d-flex justify-content-between mt-3">
-                    <button class="btn btn-secondary" id="bt-voltar">Voltar</button>
+                <div class="d-flex justify-content-end mt-3">
+                    <button class="btn btn-secondary me-2" id="bt-voltar">Voltar</button>
+                    <button class="btn btn-warning me-2" id="imprimir-btn">Imprimir Comprovante</button>
                     <button class="btn btn-success" id="finalizar-btn">Confirmar Inscrição</button>
                 </div>
 
@@ -173,10 +171,69 @@
                 <div class="vw-plugin-top-wrapper"></div>
             </div>
         </div>
-        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-        <script>
-            new window.VLibras.Widget('https://vlibras.gov.br/app');
-        </script>
+
+
 </body>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+<script>
+    document.getElementById('imprimir-btn').addEventListener('click', function () {
+        // 1. Clona o conteúdo do comprovante
+        const comprovante = document.getElementById('comprovante-container').cloneNode(true);
+
+        // 2. Cria um container temporário apenas para impressão
+        const printContainer = document.createElement('div');
+        const header = document.createElement('div');
+        printContainer.id = 'print-container';
+
+        header.innerHTML = `
+        <h1 class="text-center">Comprovante de Inscrição</h1>
+        `;
+
+        // 3. Adiciona estilos específicos para impressão
+        const printStyles = document.createElement('style');
+        printStyles.id = 'print-styles';
+        printStyles.innerHTML = `
+        #print-container {
+            position: fixed;
+            top: -1000px;
+            left: -1000px;
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #print-container,
+            #print-container * {
+                visibility: visible;
+            }
+            #print-container {
+                pending: 20px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+        }
+    `;
+
+        // 4. Monta a estrutura
+        printContainer.appendChild(header);
+        printContainer.appendChild(comprovante);
+        document.body.appendChild(printStyles);
+        document.body.appendChild(printContainer);
+
+        // 5. Dispara a impressão
+        window.print();
+
+        // 6. Limpa os elementos temporários após impressão
+        setTimeout(() => {
+            document.body.removeChild(printContainer);
+            document.body.removeChild(printStyles);
+        }, 500);
+    });
+</script>
 
 </html>

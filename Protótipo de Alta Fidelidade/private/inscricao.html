@@ -108,7 +108,7 @@
                             </div>
                             <div class="col-md-3">
                                 <label for="campus" class="form-label">Campus</label>
-                                <select class="form-select" id="campus" name="campus">
+                                <select class="form-select" disabled readomly id="campus" name="campus">
                                     <option value="VCA">Vitória da Conquista</option>
                                     <option value="JQE">Jequié</option>
                                     <option value="ITA">Itapetinga</option>
@@ -116,11 +116,11 @@
                             </div>
                             <div class="col-md-2">
                                 <label for="vagas" class="form-label">Quantidade de Vagas</label>
-                                <input type="text" class="form-control" id="vagas" name="vagas" value="15" readonly>
+                                <input type="text" disabled readomly class="form-control" id="vagas" name="vagas" value="15" readonly>
                             </div>
                             <div class="col-md-2">
                                 <label for="periodo" class="form-label">Período Letivo</label>
-                                <input type="text" class="form-control" id="periodo" name="periodo" value="2025.2"
+                                <input type="text" disabled readomly class="form-control" id="periodo" name="periodo" value="2025.2"
                                     readonly>
                             </div>
                             <div class="col-md-12">
@@ -155,17 +155,21 @@
                                     PNG).</small>
 
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <label for="anexos" class="form-label">Anexos</label>
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <a href="#" target="_blank" rel="noopener noreferrer">documento teste.pdf</a>
+                                        <p class="m-0">Nome arquivo: <a href="#" target="_blank" rel="noopener noreferrer">documento teste.pdf</a></p>
+                                        <p class="m-0">Tamanho: 1.2 MB</p>                                        
+                                        <p class="m-0">Data modificação: 08/02/2025 02:22:04</p>
                                         <button class="btn btn-outline-danger" type="button" title="Excluir">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </button>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <a href="#" target="_blank" rel="noopener noreferrer">imagem2345.png</a>
+                                        <p class="m-0">Nome arquivo: <a href="#" target="_blank" rel="noopener noreferrer">imagem-2025.png</a></p>
+                                        <p class="m-0">Tamanho: 5.0 MB</p>                                        
+                                        <p class="m-0">Data modificação: 10/05/2025 12:30:06</p>
                                         <button class="btn btn-outline-danger" type="button" title="Excluir">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </button>
